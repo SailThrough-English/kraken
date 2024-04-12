@@ -1,0 +1,12 @@
+version: '3'
+services:
+  kraken:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - GHCR_USERNAME=${GHCR_USERNAME}
+      - GHCR_TOKEN=${GHCR_TOKEN}
